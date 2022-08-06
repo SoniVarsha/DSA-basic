@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+</head>
+<body>
+    <h1>Linked List</h1>
+<script>
+ class Node{
+    constructor(data,next = null){
+        this.data = data;
+        this.next = next;  
+    }
+ }
+
+ class LinkedList{
+    constructor(){
+      this.head = null;//since the list is empty, head is pointing to nothing(null)
+
+    }
+
+    // insertAtFirst = insert item at first poistion
+   insertAtFirst(data){
+ const newNode = new Node(data,this.head)
+ this.head = newNode
+   }
+
+    // insertAtLAst = insert item at last position
+ insertAtlast(data){
+    const newNode = new Node(data)
+       let current = this.head
+      while(current.next !== null){  //traverse to the end of the list
+         current = current.next
+      }
+   current.next = newNode
+    }
+ 
+
+    //insertAt = insert at a specific index or in the middle
+   // getItemAtStarting = get first item from linked Lists
+   // getItemAtEnding = get last item from linked Lists
+
+   // getItemAt = get item at the nth place from linked Lists
+   //printList = print all the items of list
+ printList(){
+    let current = this.head // first item in list
+    let itemStr = ''
+   while (current !== null){   //run the loop until current gets a null value
+    itemStr += current.data;
+    itemStr += '-> '
+    console.log('new node', current)
+    console.log('new node data', current.data)
+     current = current.next //move current one by one
+         
+       }   
+       console.log('Items in Linked Lists:' , itemStr)  
+ }
+ }
+
+ const ll = new LinkedList()
+  ll.insertAtFirst('www.google.com')
+  ll.insertAtFirst('www.facebook.com')
+  ll.insertAtFirst('www.linkeldn.com')
+
+ll.insertAtlast("www.varsha.com")
+  ll.printList()
+  //linkeldn -> facebook -> google
+</script>
+
+</body>
+</html>

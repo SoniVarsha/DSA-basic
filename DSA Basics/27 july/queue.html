@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Queue</h1>
+
+    <script>
+        let queue = [];
+function enqueue(newItem){
+    queue.push(newItem)
+}
+
+function dequeue(){
+    queue.shift()
+}
+
+function size(){
+    return queue.length
+}
+
+function findFront(){
+    return queue[0]
+}
+
+function isEmpty(){
+    if(queue.length == 0){
+    return true;
+    }
+    else{
+        return false;
+    }
+    //  return queue.length>0 ?false : true
+}
+
+function isItemPresentInQueue(){
+//  return   queue.includes('Abraham').
+// return   queue.indexOf('Abraham')
+// return   queue.indexOf('Michael')
+ return   queue.includes('Michael')
+   }
+
+
+let isQueueEmpty = isEmpty()
+console.log('is Queue Empty', isQueueEmpty)
+
+
+enqueue('John')
+enqueue('Jane')
+enqueue('Alex')
+enqueue('Scott')
+enqueue('Michael')
+
+console.log('enqueue ',queue)
+
+dequeue()
+console.log("dequeue",queue)
+
+let lengthofQueue = size()
+console.log("length",lengthofQueue)
+
+let front = findFront()
+console.log('front is :', front)
+
+isQueueEmpty = isEmpty()
+console.log('is Queue Empty', isQueueEmpty)
+
+
+let isItemInQueue = isItemPresentInQueue()
+console.log('Index of present item', isItemInQueue)
+    </script>
+</body>
+</html>

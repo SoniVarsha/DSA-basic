@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+</head>
+<body>
+    <h1>Linked List</h1>
+<script>
+ class Node{
+    constructor(data,next = null){
+        this.data = data;
+        this.next = next;  
+    }
+ }
+
+ class LinkedList{
+    constructor(){
+      this.head = null;//since the list is empty, head is pointing to nothing(null)
+      this.size = 0;
+
+    }
+
+    // insertAtFirst = insert item at first poistion
+   insertAtFirst(data){
+    const olderElement = this.head
+ const newNode = new Node(data, olderElement)
+ this.head = newNode
+ this.size++
+   }
+
+    // insertAtLAst = insert item at last position
+ insertAtlast(data){
+    const newNode = new Node(data)
+       let current = this.head
+      while(current.next !== null){  //traverse to the end of the list
+         current = current.next
+      }
+   current.next = newNode
+   this.size++
+    }
+ 
+
+    //insertAt = insert at a specific index or in the middle
+insertAt(data,index){
+
+  if(index<0 || index>this.size) {
+    console.log('Invalid index', index)
+    return;
+  }
+  else if (index === 0){
+    this.insertAtFirst(data)
+  }
+   else{ const newNode = new Node(data)
+    let current = this.head
+    let counter = 0;
+    let previous;
+    while(counter < index){
+        previous =current
+            counter++
+     current = current.next
+    }
+    previous.next = newNode
+    newNode.next = current
+    this.size++
+}
+}
+
+//deleteFirst = delete the first item in the list
+deleteFirst(){
+    let current = this.head 
+ this.head = current.next
+ this.size--
+}
+
+//deletelast = delete the last item
+deletelast(){
+       let previous;
+       let deleted;
+    let current = this.head
+    while( current.next != null){   
+        previous = current    
+        current = current.next
+        }
+     console.log("deleted last item :", current.data)
+      deleted = current.next
+     previous.next = deleted
+     this.size--
+   }
+ 
+
+//getSize = to get size of the list
+getSize(){
+ return this.size
+}
+
+ //emptyLinkedList = is linked list is empty
+ emptyLinkedList(){
+//  if(this.size == 0){
+//     console.log("empty linked list")
+//  }
+//  else{
+//    console.log('size of linked list', this.size)
+//  }
+ if(this.head == null){
+    console.log("empty linked list")
+ }
+ else{
+   console.log('size of linked list', this.size)
+ }
+ }
+
+   // getItemAtStarting = get first item from linked Lists
+getItemAtStarting(){
+   const first = this.head;
+   console.log('first item',first.data)
+}
+
+   // getItemAtEnding = get last item from linked Lists
+   getItemAtEnding(){
+      let current = this.head
+   while(current.next !== null){
+      current= current.next
+   }
+   console.log('last Item', current.data)
+   }
+
+   // getItemAt = get item at the nth place from linked Lists
+   getItemAt(index){
+      let current = this.head
+      let counter=0;
+      while(counter<index){
+        current = current.next
+        counter++
+      }
+      console.log(`get item at ${index}`, current.data)
+   }
+
+
+   //printList = print all the items of list
+ printList(){
+    let current = this.head // first item in list
+    let itemStr = ''
+   while (current !== null){   //run the loop until current gets a null value
+    itemStr += current.data;
+    itemStr += '-> '
+    // console.log('new node', current)
+    // console.log('new node data', current.data)
+     current = current.next //move current one by one
+         
+       }   
+       console.log('Items in Linked Lists:' , itemStr)  
+ }
+ }
+ 
+
+ const ll = new LinkedList()
+
+ ll.emptyLinkedList()
+
+
+  ll.insertAtFirst('www.google.com')
+  ll.insertAtFirst('www.facebook.com')
+  ll.insertAtFirst('www.linkeldn.com')
+  ll.insertAtFirst('www.twitter.com')
+  ll.insertAtFirst('www.mi.com')
+  ll.printList()
+let size = ll.getSize()
+// console.log("size: ", size)
+
+
+ll.insertAtlast("www.varsha.com")
+  ll.printList()
+  //linkeldn -> facebook -> google
+   size = ll.getSize()
+// console.log("size: ", size)
+
+
+  ll.insertAt('www.insertat2position',2)
+  ll.printList()
+//   ll.insertAt('www.invalid.com',-6)
+   size = ll.getSize()
+// console.log("size: ", size)
+
+  ll.deleteFirst()
+  ll.printList()
+   size = ll.getSize()
+console.log("size: ", size)
+
+  ll.deletelast()
+  ll.printList()
+   size = ll.getSize()
+console.log("size: ", size)
+
+ll.getItemAtStarting()
+
+ll.getItemAtEnding()
+
+ll.getItemAt(3)
+
+ll.emptyLinkedList()
+</script>
+
+</body>
+</html>

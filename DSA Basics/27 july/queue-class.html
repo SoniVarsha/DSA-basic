@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Queue through class constructor</h1>
+
+    <script>
+    
+class Queue{
+    constructor(){
+        this.queue = []
+    }
+
+ enqueue(newItem){
+    this.queue.push(newItem)
+}
+
+ dequeue(){
+    this.queue.shift()
+}
+
+dequeue2(){
+    this.queue2.shift()
+}
+
+
+ size(){
+    return this.queue.length
+}
+
+ findFront(){
+    return this.queue[0]
+}
+
+ isEmpty(){
+    if(this.queue.length == 0){
+    return true;
+    }
+    else{
+        return false;
+    }
+    //  return queue.length>0 ?false : true
+}
+
+isEmpty2(){
+    if(this.queue2.length == 0){
+    return true;
+    }
+    else{
+        return false;
+    }
+    //  return queue.length>0 ?false : true
+}
+
+
+ isItemPresentInQueue(){
+//  return   this.queue.includes('Abraham').
+// return   this.queue.indexOf('Abraham')
+// return  this.queue.indexOf('Michael')
+ return   this.queue.includes('Michael')
+   }
+
+   traverseQueue(){
+// console.log("by stringify: ",JSON.stringify(this.queue))
+// console.log("by toString: ", this.queue.toString())
+// console.log("by Join: ", this.queue.join(" , "))
+return this.queue.join(" , ") 
+   }
+}
+const queue = new Queue
+
+
+let isQueueEmpty = queue.isEmpty()
+console.log('is Queue Empty', isQueueEmpty)
+
+
+queue.enqueue('John')
+queue.enqueue('Jane')
+queue.enqueue('Alex')
+queue.enqueue('Scott')
+queue.enqueue('Michael')
+
+console.log('enqueue : ', queue.queue)
+
+queue.dequeue()
+console.log("dequeue: ",queue.queue)
+
+let lengthofQueue = queue.size()
+console.log("length", lengthofQueue)
+
+let front = queue.findFront()
+console.log('front is :',  front)
+
+isQueueEmpty = queue.isEmpty()
+console.log('is Queue Empty',  isQueueEmpty)
+
+
+let isItemInQueue = queue.isItemPresentInQueue()
+console.log('Index of present item', isItemInQueue)
+
+
+ let traversingtheQueue = queue.traverseQueue()
+console.log('traversing the queue: ',traversingtheQueue)
+
+
+
+ const queue2 = new Queue();
+
+ for(let i=1; i<=10; i++){
+  queue2.enqueue(i);
+ }
+ console.log('items in new queue2 ',queue2.traverseQueue())
+
+
+//  for(let i=1; i<=10; i++){
+//  queue2.dequeue();
+//    }
+//    console.log('items to remove from queue2 ', queue2.isEmpty())
+//    console.log('items to remove from queue2 ', queue2)
+ 
+lengthofNewQueue2= queue2.size()
+console.log('length of New Queue is :',lengthofNewQueue2)
+console.log(queue2.traverseQueue())
+console.log('items in queue2:',queue2)
+
+   while(lengthofNewQueue2>0 ){
+    queue2.dequeue();
+    lengthofNewQueue2 = lengthofNewQueue2-1
+   }
+   console.log('Remove items from queue',queue2)
+
+
+let isEmptyQueue2 = queue2.isEmpty()
+console.log(isEmptyQueue2)
+console.log(queue2)
+
+
+    </script>
+</body>
+</html>

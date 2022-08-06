@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Stack through class constructor</h1>
+    <script>
+
+//constructor = It is a function in class which initializes the data i.e variable      
+
+//NOTE = TO USE VARIABLE AND FUNCTION INSDE THE CLASS USE "this" keyword 
+// eg = this.stack
+
+// class className{
+//     constructor(){
+//    declare the data member(variable)
+//     }
+//     class body
+// }
+
+
+class Stack{
+constructor(){
+    this.stack = []; //let stack = []
+}
+
+pushItemInStack(newItem){
+    this.stack.push(newItem);
+}
+
+peek(){
+   const stacklength = this.stack.length;
+   const topIndex = this.stack.length-1 ;
+   return this.stack[topIndex]
+}
+
+popItemFromStack(){
+ const deletedItem =   this.stack.pop();
+ return deletedItem;
+}
+
+findLengthOfStack(){
+    let stackLength = this.stack.length;
+    return stackLength;
+}
+
+traverseStack(){  //from zero upto n value in stack 
+    let stackItemInString = ''
+    for(let count=0; count< this.stack.length; count++){
+        const currentItems= this.stack[count]
+        stackItemInString += currentItems
+       stackItemInString += ' '
+    }
+    return stackItemInString
+}
+}
+
+
+let stack = new Stack;
+
+
+
+stack.pushItemInStack('John');
+
+stack.pushItemInStack('Jane'); //Jane is at the top
+
+
+let topofStack = stack.peek()
+console.log(topofStack) // jane
+
+stack.pushItemInStack('Jinnie');
+stack.pushItemInStack('Alex');
+stack.pushItemInStack('Nato');
+
+topofStack = stack.peek()
+console.log(topofStack) //Nato
+
+// stack.popItemFromStack()
+
+// let deleteThingsFromStack = stack.popItemFromStack()
+// console.log("Deleted Item: ",deleteThingsFromStack)
+
+console.log(stack.findLengthOfStack())
+
+const stackString = stack.traverseStack()
+console.log(stackString)
+    </script>
+</body>
+</html>

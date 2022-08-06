@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>Time complexity</h1>
+
+
+<script>
+    // (---start-----)
+let array = [1, 2, "@", 4.0, 'EDYODA', 6, 7, 8, 9]
+let length = array.length  //O(1)
+for(let i=0; i<length-1; i++){   //O(9)
+    const elem = array[i]
+    console.log(elem)
+}
+
+// n = size of array
+// Total Time COmplexity = 0(1) + O(n)
+
+// 1. Neglect all constant = O(n)
+// 2. Only consider the highest = 0(n)
+// (---end-----)
+
+    // (---start-----)
+let Array = [1, 2, "@", 4.0, 'EDYODA', 6, 7, 8, 9]
+const item = 6
+let tlength = Array.length  //O(1)
+for(let i=0; i<tlength-1; i++){   
+    if(item === Array[i]){    // 0(n)
+    console.log(i)        // O(1)
+     break;   // O(1)
+}
+}
+
+// n = size of array
+// Total Time COmplexity = 0(1) + O(n) + O(1)+ O(1)
+
+
+// 1. Neglect all constant = O(n)
+// 2. Only consider the highest = 0(n)
+
+// 6 = Theta(6)
+// 1 = Omega(1)
+// 10 = O(9)
+// (---end-----)
+
+
+    // (---start-----)
+    let ArrayList = [2, 1, "@", 4.0, 'EDYODA', 6, 7, 8, 9]
+
+let arrayListlength = ArrayList.length  //O(1)
+for(let i=0; i< arrayListlength-1; i++){   //O(n)
+   for(let j=i+1 ; j< arrayListlength-2; j++ ){  //O(n)
+    if(ArrayList[i] > ArrayList[j]){
+    const temp = ArrayList[j]
+    ArrayList[j] = ArrayList[i]
+    ArrayList[i] = temp
+    }
+   }
+}
+
+// n = size of array
+// Total Time COmplexity = 0(1) + O(n) + O(n)
+
+//for nested loop, multiplication occurs instead of addition
+// for same length n will be same if length is diiferent means if two variables of different length are used then O(n)* O(m)  => O(nm)
+// 1. Neglect all constant = O(n)* O(n)
+// 2. Only consider the highest = 0(n^2)
+
+    // (---end-----)
+
+
+    //nested loop gives us a exponential time.
+
+
+</script>
+</body>
+</html>

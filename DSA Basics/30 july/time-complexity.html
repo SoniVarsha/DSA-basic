@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+function addNaturalNo(n){
+    let total = 0;   //1
+for(let i=1; i<=n; i++){
+      total += i  //n
+}
+return total;   //1
+}
+
+//complexity = 1+n+1  = 2+n
+// neglect constant = n
+// complexity of algo = O(n)
+console.log(addNaturalNo(100))
+
+
+function  addNaturalNoExp(n){
+    return n*(n+1)/2;   //1
+}
+
+//complexity = 1
+// complexity of algo = O(1)
+
+// O(1) : constant complexity
+// O(log n) : logrithmic Complexity
+// O(n) : Linear complexity
+// O(n log n) : 
+// O(n*2) : Quadratic Complexity
+// O(n*3) : Cubic Complexity
+// O(2^n):
+//O(n!) : Factorial Complexity
+
+console.log(addNaturalNo(10))
+
+
+
+    </script>
+</body>
+</html>
